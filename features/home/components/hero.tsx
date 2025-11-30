@@ -23,17 +23,17 @@ const Hero = () => {
             transition={{ delay: 0.1 }}
           >
             <span>
-              Hi, I'm <span className="text-primary">Bona Brian Siagian</span>
+              Hi, I'm <span className="text-primary">Abdul Naasir Ahamad</span>
             </span>
             <span>Software Engineer</span>
           </motion.h1>
           <motion.div className="from-foreground via-foreground/90 to-foreground/70 bg-gradient-to-b to-90% bg-clip-text font-bold text-transparent md:text-xl">
-            I craft{' '}
+            I build{' '}
             <FlipWords
-              words={['interactive', 'amazing', 'fantastic', 'beautiful']}
+              words={['clean', 'creative', 'efficient', 'scalable']}
               className="text-primary font-black"
             />{' '}
-            things with code. I also talk and write about those things.
+            digital solutions. Passionate about full-stack development and exploring new technologies.
           </motion.div>
         </div>
 
@@ -46,7 +46,7 @@ const Hero = () => {
           >
             <Button asChild variant="shadow" className="group">
               <Link href={ROUTES.about}>
-                Discover more{' '}
+                Learn about me{' '}
                 <ChevronRightIcon className="transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </Button>

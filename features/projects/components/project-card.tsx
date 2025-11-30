@@ -31,7 +31,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
     height: number;
     placeholder?: 'blur' | 'empty';
     blurDataURL?: string;
-  } = JSON.parse(imageMeta);
+  } = imageMeta ? JSON.parse(imageMeta) : {};
 
   const extraImageProps = useMemo(() => {
     if (image && parsedImageMeta?.blurDataURL) {
@@ -45,7 +45,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
     }
 
     return {};
-  }, [image, parsedImageMeta.blurDataURL]);
+  }, [image, parsedImageMeta?.blurDataURL]);
 
   let projectUrl = url ?? `${ROUTES.projects}/${slug}`;
   if (playStoreUrl) projectUrl = playStoreUrl;
@@ -54,15 +54,21 @@ const ProjectCard = ({ project }: { project: Project }) => {
     <Link href={projectUrl} className="group bg-card rounded-lg">
       <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-cover bg-no-repeat">
         <div className="absolute size-full" />
-        <Image
-          src={image as string}
-          alt={title}
-          fill
-          className="rounded-t-lg object-cover transition-transform group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, 50vw"
-          priority
-          {...extraImageProps}
-        />
+        {image ? (
+          <Image
+            src={image as string}
+            alt={title}
+            fill
+            className="rounded-t-lg object-cover transition-transform group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
+            {...extraImageProps}
+          />
+        ) : (
+          <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-primary/10 to-primary/5">
+            <p className="text-muted-foreground text-sm">Image coming soon</p>
+          </div>
+        )}
       </div>
       <div className="flex flex-col space-y-2 p-4">
         <h2 className="font-cal text-card-foreground text-lg md:text-xl">
@@ -72,20 +78,22 @@ const ProjectCard = ({ project }: { project: Project }) => {
       </div>
       {stacks && stacks.length > 0 && (
         <div className="mx-4 mb-4 flex flex-wrap items-end gap-2">
-          {stacks.map((stack) => (
-            <Tooltip key={stack}>
-              <TooltipTrigger asChild>
-                <span>
-                  {cloneElement(STACKS[stack], {
-                    className: cn(
-                      `${STACKS[stack].props.className ?? ''} size-6`,
-                    ),
-                  })}
-                </span>
-              </TooltipTrigger>
-              <TooltipContent>{stack}</TooltipContent>
-            </Tooltip>
-          ))}
+          {stacks
+            .filter((stack) => STACKS[stack]) // Only show stacks that exist in STACKS
+            .map((stack) => (
+              <Tooltip key={stack}>
+                <TooltipTrigger asChild>
+                  <span>
+                    {cloneElement(STACKS[stack], {
+                      className: cn(
+                        `${STACKS[stack].props.className ?? ''} size-6`,
+                      ),
+                    })}
+                  </span>
+                </TooltipTrigger>
+                <TooltipContent>{stack}</TooltipContent>
+              </Tooltip>
+            ))}
         </div>
       )}
     </Link>

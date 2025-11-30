@@ -21,7 +21,7 @@ const GetInTouch = () => {
         together!
       </p>
       <Button asChild variant="shadow" className="group">
-        <Link href={`mailto:${SITE.author.email}?subject=Hi Bona!`}>
+        <Link href={`mailto:${SITE.author.email}?subject=Hi Abdul!`}>
           Get in touch
           <ChevronRightIcon className="transition-transform duration-200 group-hover:translate-x-1" />
         </Link>

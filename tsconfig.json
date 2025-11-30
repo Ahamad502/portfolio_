@@ -33,5 +33,5 @@
     "next.config.ts",
     "./.content-collections/generated",
     ".next/types/**/*.ts"
-  ]
+, "prisma/prisma.config.js"  ]
 }

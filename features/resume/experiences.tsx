@@ -1,26 +1,6 @@
-import {
-  JavaScript,
-  Jest,
-  Kotlin,
-  Laravel,
-  NextJS,
-  NuxtJS,
-  PHP,
-  RabbitMQ,
-  ReactJS,
-  Redis,
-  Spring,
-  TailwindCSS,
-  TypeScript,
-  VueJS,
-} from '@/components/icons';
-
 import type { Experience } from './types';
 
-export const EXPERIENCES: Experience[] = [
-  {
-    company: {
-      name: 'Mekari - Sign',
+export const EXPERIENCES: Experience[] = [];
       logo: '/media/resume/mekari.png',
       url: 'https://mekarisign.com',
       location: 'Jakarta',

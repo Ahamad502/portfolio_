@@ -20,7 +20,7 @@ const PostCard = ({ post }: { post: Post }) => {
     height: number;
     placeholder?: 'blur' | 'empty';
     blurDataURL?: string;
-  } = JSON.parse(imageMeta);
+  } = imageMeta ? JSON.parse(imageMeta) : {};
 
   const extraImageProps = useMemo(() => {
     if (parsedImageMeta?.blurDataURL) {
@@ -42,15 +42,21 @@ const PostCard = ({ post }: { post: Post }) => {
     <Link href={`${ROUTES.blog}/${slug}`} className="group bg-card rounded-lg">
       <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-cover bg-no-repeat">
         <div className="absolute size-full" />
-        <Image
-          src={image as string}
-          alt={title}
-          fill
-          className="rounded-t-lg object-cover transition-transform group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, 50vw"
-          priority
-          {...extraImageProps}
-        />
+        {image ? (
+          <Image
+            src={image as string}
+            alt={title}
+            fill
+            className="rounded-t-lg object-cover transition-transform group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
+            {...extraImageProps}
+          />
+        ) : (
+          <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-primary/10 to-primary/5">
+            <p className="text-muted-foreground text-sm">Image coming soon</p>
+          </div>
+        )}
       </div>
       <div className="text-muted-foreground flex items-center justify-between gap-2 p-4 text-sm">
         <time dateTime={publishedAt}>{publishedAt}</time>

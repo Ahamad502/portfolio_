@@ -13,57 +13,22 @@ const Biography = () => {
     <>
       <p>Hi there! Thanks for visiting my digital home on the internet.</p>
       <p>
-        I'm Bona Brian Siagian, a Software Engineer passionate about building
-        innovative digital solutions that drive real business impact. I
-        specialize in both frontend development—the coding you see on the
-        screen—and backend development, the processes happening behind the
-        scenes.
+        I'm Abdul Naasir Ahamad, a B.Tech CSE student passionate about full-stack
+        and web development, always exploring new technologies and building clean,
+        creative solutions. I enjoy problem-solving, experimenting with ideas, and
+        writing code that is simple and efficient.
       </p>
       <p>
-        I have extensive experience in crafting scalable software systems that
-        align with both technical and business needs, leveraging a wide range of
-        technologies:
-      </p>
-      <ul>
-        <li>
-          Languages:{' '}
-          <Link href="https://www.typescriptlang.org/">TypeScript</Link>,{' '}
-          <Link href="https://www.javascript.com/">JavaScript</Link>,{' '}
-          <Link href="https://www.php.net/">PHP</Link>,{' '}
-          <Link href="https://kotlinlang.org/">Kotlin</Link>{' '}
-        </li>
-        <li>
-          Frontend Frameworks & Meta-frameworks:{' '}
-          <Link href="https://reactjs.org/">React</Link>,{' '}
-          <Link href="https://vuejs.org/">Vue</Link>,{' '}
-          <Link href="https://nextjs.org/">Next.js</Link>,{' '}
-          <Link href="https://nuxt.com/">Nuxt.js</Link>
-        </li>
-        <li>
-          Backend Frameworks: <Link href="https://laravel.com/">Laravel</Link>,{' '}
-          <Link href="https://spring.io/">Spring</Link>
-        </li>
-      </ul>
-      <p>
-        As a Software Engineer, I take ownership of designing, developing, and
-        maintaining software that meets technical specifications while
-        delivering tangible business value. I work closely with organizations to
-        understand their unique requirements and apply my technical expertise to
-        build customized solutions that drive success.
+        I've participated in a major hackathon at VR Siddhartha Engineering College
+        and reached the second round. I practice daily coding and DSA to strengthen
+        my fundamentals. My goal is to grow into a strong full-stack developer and
+        build a meaningful career in tech.
       </p>
       <p>
-        I consider myself a curious and inquisitive learner, always eager to
-        expand my skills. In my free time, I enjoy working on personal side
-        projects, as they allow me to explore new technologies and refine my
-        expertise. I actively seek out new learning opportunities to stay ahead
-        of industry trends and advancements.
-      </p>
-      <p>
-        Besides hacking, I also have a strong appreciation for video games and
-        music. I find that these activities provide an important balance to my
-        professional life, allowing me to relax and recharge after a long day at
-        work. I believe that maintaining a healthy work-life balance is is the
-        key to keeping both my code and my spirits bug-free! 🎮🎶
+        I approach development with a focus on clean, simple, and efficient code.
+        My core principles are clarity, consistency, and continuous learning—building
+        projects step by step, improving through feedback, and always aiming for
+        better performance and user experience.
       </p>
       <p>
         If you'd like to learn more about my professional background and
@@ -82,7 +47,7 @@ const Biography = () => {
       <p>
         Questions or collaborations? Reach out to me at{' '}
         <Link
-          href={`mailto:${SITE.author.email}?subject=Hi Bona!`}
+          href={`mailto:${SITE.author.email}?subject=Hi Abdul!`}
           className="underline"
         >
           {SITE.author.email}
@@ -103,7 +68,7 @@ const Biography = () => {
           <LinkedIn className="size-5" />
         </Link>
         <Link
-          href={`mailto:${SITE.author.email}?subject=Hi Bona!`}
+          href={`mailto:${SITE.author.email}?subject=Hi Abdul!`}
           className="text-muted-foreground hover:text-foreground transition-colors duration-200"
         >
           <Email className="size-5" />

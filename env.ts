@@ -14,7 +14,7 @@ const env = createEnv({
   client: {
     NEXT_PUBLIC_APP_URL: z.string().url(),
     NEXT_PUBLIC_GOOGLE_ANALYTICS: z.string().optional(),
-    NEXT_PUBLIC_SENTRY_DSN: z.string().url().optional(),
+    NEXT_PUBLIC_SENTRY_DSN: z.string().url().optional().or(z.literal('')),
     NEXT_PUBLIC_AVAILABLE_FOR_HIRE: z
       .preprocess((val) => val === 'true', z.boolean())
       .default(false),
@@ -37,7 +37,7 @@ const env = createEnv({
     NEXTAUTH_SECRET: z.string().trim().min(1),
 
     /** sentry */
-    SENTRY_DSN: z.string().url().optional(),
+    SENTRY_DSN: z.string().url().optional().or(z.literal('')),
     SENTRY_AUTH_TOKEN: z.string().optional(),
 
     /** google */
