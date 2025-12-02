@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { cloneElement, useMemo } from 'react';
 
 import type { Project } from '@/.content-collections/generated';
+import { ExternalLink, GitHub } from '@/components/icons';
 import {
   Tooltip,
   TooltipContent,
@@ -51,35 +52,37 @@ const ProjectCard = ({ project }: { project: Project }) => {
   if (playStoreUrl) projectUrl = playStoreUrl;
 
   return (
-    <Link href={projectUrl} className="group bg-card rounded-lg">
-      <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-cover bg-no-repeat">
-        <div className="absolute size-full" />
-        {image ? (
-          <Image
-            src={image as string}
-            alt={title}
-            fill
-            className="rounded-t-lg object-cover transition-transform group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, 50vw"
-            priority
-            {...extraImageProps}
-          />
-        ) : (
-          <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-primary/10 to-primary/5">
-            <p className="text-muted-foreground text-sm">Image coming soon</p>
-          </div>
-        )}
-      </div>
-      <div className="flex flex-col space-y-2 p-4">
-        <h2 className="font-cal text-card-foreground text-lg md:text-xl">
-          {title}
-        </h2>
-        <p className="text-muted-foreground">{description}</p>
-      </div>
+    <div className="group bg-card overflow-hidden rounded-lg">
+      <Link href={projectUrl} className="block">
+        <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-cover bg-no-repeat">
+          <div className="absolute size-full" />
+          {image ? (
+            <Image
+              src={image as string}
+              alt={title}
+              fill
+              className="rounded-t-lg object-cover transition-transform group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+              {...extraImageProps}
+            />
+          ) : (
+            <div className="from-primary/10 to-primary/5 flex h-full w-full items-center justify-center bg-gradient-to-br">
+              <p className="text-muted-foreground text-sm">Image coming soon</p>
+            </div>
+          )}
+        </div>
+        <div className="flex flex-col space-y-2 p-4">
+          <h2 className="font-cal text-card-foreground text-lg md:text-xl">
+            {title}
+          </h2>
+          <p className="text-muted-foreground">{description}</p>
+        </div>
+      </Link>
       {stacks && stacks.length > 0 && (
         <div className="mx-4 mb-4 flex flex-wrap items-end gap-2">
           {stacks
-            .filter((stack) => STACKS[stack]) // Only show stacks that exist in STACKS
+            .filter((stack) => STACKS[stack])
             .map((stack) => (
               <Tooltip key={stack}>
                 <TooltipTrigger asChild>
@@ -96,7 +99,35 @@ const ProjectCard = ({ project }: { project: Project }) => {
             ))}
         </div>
       )}
-    </Link>
+      <div className="flex gap-3 px-4 pb-4">
+        {url && (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="bg-primary/10 hover:bg-primary/20 text-primary flex flex-1 items-center justify-center gap-2 rounded-md px-3 py-2 transition-colors"
+          >
+            <GitHub className="size-4" />
+            <span className="text-sm font-medium">GitHub</span>
+          </a>
+        )}
+        {(url || playStoreUrl) && (
+          <a
+            href={projectUrl}
+            target={playStoreUrl ? '_blank' : undefined}
+            rel={playStoreUrl ? 'noopener noreferrer' : undefined}
+            onClick={(e) => e.stopPropagation()}
+            className="bg-primary/10 hover:bg-primary/20 text-primary flex flex-1 items-center justify-center gap-2 rounded-md px-3 py-2 transition-colors"
+          >
+            <ExternalLink className="size-4" />
+            <span className="text-sm font-medium">
+              {playStoreUrl ? 'App Store' : 'Live Demo'}
+            </span>
+          </a>
+        )}
+      </div>
+    </div>
   );
 };
 

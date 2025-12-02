@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 import {
-  allPosts,
+  allCertificates,
   allProjects,
   allSnippets,
 } from '@/.content-collections/generated';
@@ -9,11 +9,11 @@ import { ROUTES } from '@/constants/routes';
 import { BASE_URL } from '@/constants/site';
 
 const sitemap = (): MetadataRoute.Sitemap => {
-  const posts = allPosts
-    .filter((post) => post.published)
-    .map((post) => ({
-      url: `${BASE_URL}${ROUTES.blog}/${post.slug}`,
-      lastModified: post.date.split('T')[0],
+  const certificates = allCertificates
+    .filter((cert) => cert.published)
+    .map((cert) => ({
+      url: `${BASE_URL}${ROUTES.certificates}/${cert.slug}`,
+      lastModified: cert.date.split('T')[0],
     }));
 
   const snippets = allSnippets
@@ -25,7 +25,7 @@ const sitemap = (): MetadataRoute.Sitemap => {
 
   const routes = [
     '',
-    ROUTES.blog,
+    ROUTES.certificates,
     ROUTES.projects,
     ROUTES.snippets,
     ROUTES.tags,
@@ -39,11 +39,11 @@ const sitemap = (): MetadataRoute.Sitemap => {
       .filter((project) => project.published)
       .map((project) => `${ROUTES.projects}/${project.slug}`),
   ].map((route) => ({
-    url: `${BASE_URL}${route},`,
+    url: `${BASE_URL}${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }));
 
-  return [...routes, ...posts, ...snippets];
+  return [...routes, ...certificates, ...snippets];
 };
 
 export default sitemap;

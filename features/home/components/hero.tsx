@@ -8,8 +8,7 @@ import Container from '@/components/container';
 import FlipWords from '@/components/flip-words';
 import { Button } from '@/components/ui/button';
 import { ROUTES } from '@/constants/routes';
-
-import CurrentTechStack from './current-tech-stack';
+import TechStacks from '@/features/about/components/tech-stacks';
 
 const Hero = () => {
   return (
@@ -33,7 +32,8 @@ const Hero = () => {
               words={['clean', 'creative', 'efficient', 'scalable']}
               className="text-primary font-black"
             />{' '}
-            digital solutions. Passionate about full-stack development and exploring new technologies.
+            digital solutions. Passionate about full-stack development and
+            exploring new technologies.
           </motion.div>
         </div>
 
@@ -54,7 +54,7 @@ const Hero = () => {
         </div>
 
         <div className="mt-16 lg:mt-20">
-          <CurrentTechStack />
+          <TechStacks />
         </div>
       </Container>
     </div>

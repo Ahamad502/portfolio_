@@ -39,7 +39,10 @@ const PostCard = ({ post }: { post: Post }) => {
   const publishedAt = formatDate(date);
 
   return (
-    <Link href={`${ROUTES.blog}/${slug}`} className="group bg-card rounded-lg">
+    <Link
+      href={`${ROUTES.certificates}/${slug}`}
+      className="group bg-card rounded-lg"
+    >
       <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-cover bg-no-repeat">
         <div className="absolute size-full" />
         {image ? (
@@ -53,7 +56,7 @@ const PostCard = ({ post }: { post: Post }) => {
             {...extraImageProps}
           />
         ) : (
-          <div className="flex items-center justify-center w-full h-full bg-gradient-to-br from-primary/10 to-primary/5">
+          <div className="from-primary/10 to-primary/5 flex h-full w-full items-center justify-center bg-gradient-to-br">
             <p className="text-muted-foreground text-sm">Image coming soon</p>
           </div>
         )}

@@ -24,7 +24,7 @@ const PostHeader = () => {
 
   return (
     <>
-      <BackButton href={ROUTES.blog} />
+      <BackButton href={ROUTES.certificates} />
       <PageHeader title={title} description={excerpt} ref={pageHeaderRef} />
       <StickyTitle title={title} elementRef={pageHeaderRef} />
       <Container>

@@ -38,7 +38,7 @@ const StickyTitle = ({ title, elementRef, gap = -64 }: StickyTitleProps) => {
 
   const isScrolled = useScroll(threshold + gap);
 
-  const transition = { duration: 0.3, ease: 'easeInOut' };
+  const transition = { duration: 0.3 };
   const variants = {
     initial: { opacity: isScrolled ? 0 : 1, y: isScrolled ? gap : 0 },
     animate: { opacity: isScrolled ? 1 : 0, y: isScrolled ? 0 : gap },

@@ -11,7 +11,6 @@ import {
   LinkedIn,
   Medal,
   Monitor,
-  Pencil,
   RSS,
   Twitter,
 } from '@/components/icons';
@@ -28,14 +27,14 @@ export const NAV_LINKS: NavLink[] = [
     onlyShowOnDropdownMenu: true,
   },
   {
-    path: ROUTES.blog,
-    label: 'Blog',
-    icon: <Pencil />,
-  },
-  {
     path: ROUTES.projects,
     label: 'Projects',
     icon: <Coffee />,
+  },
+  {
+    path: ROUTES.certificates,
+    label: 'Certificates',
+    icon: <Medal />,
   },
   {
     path: ROUTES.dashboard,
@@ -76,20 +75,19 @@ export const COMMAND_PAGES: CommandMenu[] = [
     closeOnSelect: true,
   },
   {
-    label: 'Blog',
-    href: ROUTES.blog,
-    icon: <Pencil />,
-    isExternal: false,
-    eventName: 'Pages: Blog',
-    type: 'PAGE',
-    closeOnSelect: true,
-  },
-  {
     label: 'Projects',
     href: ROUTES.projects,
     icon: <Coffee />,
     isExternal: false,
     eventName: 'Pages: Projects',
+    type: 'PAGE',
+  },
+  {
+    label: 'Certificates',
+    href: ROUTES.certificates,
+    icon: <Medal />,
+    isExternal: false,
+    eventName: 'Pages: Certificates',
     type: 'PAGE',
   },
   {
@@ -204,8 +202,8 @@ export const FOOTER_LINKS = [
   ],
   [
     {
-      title: 'Blog',
-      path: ROUTES.blog,
+      title: 'Certificates',
+      path: ROUTES.certificates,
     },
     {
       title: 'Snippets',

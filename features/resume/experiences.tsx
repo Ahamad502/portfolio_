@@ -1,6 +1,26 @@
+import {
+  JavaScript,
+  Jest,
+  Kotlin,
+  Laravel,
+  NextJS,
+  NuxtJS,
+  PHP,
+  RabbitMQ,
+  ReactJS,
+  Redis,
+  Spring,
+  TailwindCSS,
+  TypeScript,
+  VueJS,
+} from '@/components/icons';
+
 import type { Experience } from './types';
 
-export const EXPERIENCES: Experience[] = [];
+export const EXPERIENCES: Experience[] = [
+  {
+    company: {
+      name: 'Mekari',
       logo: '/media/resume/mekari.png',
       url: 'https://mekarisign.com',
       location: 'Jakarta',
@@ -27,13 +47,14 @@ export const EXPERIENCES: Experience[] = [];
     accomplishments: [
       'Enhanced digital signing UI/UX to support document signing, approvals, and interactions, with a responsive design ensuring seamless accessibility across devices.',
       'Reduced document load times and improved performance by implementing efficient rendering techniques for large PDFs.',
-      'Maintained and refined the in-house Design System Language to ensure consistent UI/UX across all features.',
-      'Developed reusable, high-quality UI components for document management and collaboration, boosting maintainability and scalability.',
-      'Built real-time document collaboration with pinned comments, optimizing event handling and state management for smooth concurrent interactions.',
+      'Maintained and refined the in-house Design System Language to ensure consistent UI/UX across features.',
+      'Developed reusable, high-quality UI components for document management and collaboration.',
+      'Built real-time collaboration with pinned comments, including optimized event handling and state management.',
       'Integrated OneDrive for seamless document uploads.',
-      'Implemented comprehensive unit tests, achieving over 75% test coverage.',
+      'Implemented unit tests achieving over 75% test coverage.',
     ],
   },
+
   {
     company: {
       name: 'Yummy Bros',
@@ -77,15 +98,16 @@ export const EXPERIENCES: Experience[] = [];
       },
     ],
     accomplishments: [
-      'Expanded application capabilities through the implementation of additional features aligned with evolving business requirements.',
-      'Utilized Next.js to code the Storefront, implementing Server-Side Rendering (SSR) for enhanced performance and user experience.',
-      'Developed a dynamic Users Dashboard (CMS) with React.js, elevating the interface and usability for content management.',
-      'Developed robust APIs to seamlessly connect the Storefront and CMS, ensuring efficient data communication and exchange.',
-      'Currently migrating from JavaScript to TypeScript, enhancing codebase maintainability, scalability, and type safety.',
-      'Currently transforming the styling infrastructure by migrating from Bootstrap to the Tailwind CSS.',
-      'Build reusable UI components.',
+      'Expanded application capabilities with new business-driven features.',
+      'Implemented SSR with Next.js for improved performance.',
+      'Developed a user-friendly CMS dashboard using React.js.',
+      'Built APIs connecting storefront and CMS.',
+      'Migrating from JavaScript to TypeScript for cleaner maintainable code.',
+      'Migrating styling from Bootstrap to Tailwind CSS.',
+      'Built reusable UI components.',
     ],
   },
+
   {
     company: {
       name: 'Investree',
@@ -137,22 +159,23 @@ export const EXPERIENCES: Experience[] = [];
       },
     ],
     accomplishments: [
-      'Designed, developed, and maintained high-performance, robust, and scalable server-side applications using Kotlin (Spring) for the back-end, PHP (Laravel) for legacy systems, and JavaScript (Vue) for front-end development.',
-      'Collaborated closely with cross-functional teams, including designers, product managers, and stakeholders to ensure seamless integration and implementation of new features.',
-      'Developed a flexible and configurable loan automation process that efficiently streamlines business operations.',
-      'Developed and maintained APIs that are widely used by our partners, facilitating seamless collaboration and integration with their systems.',
-      'Contributed to the development of technical standards, best practices, and design patterns.',
-      'Developed Partner Dashboard that are used by our partners.',
-      'Actively participated in code reviews, providing valuable feedback and ensuring adherence to coding standards, best practices, and quality assurance.',
-      'Conducted comprehensive unit testing on all new features and enhancements.',
-      'Resolved technical issues in a timely and efficient manner.',
-      'Deliver delightful UX and performant front-end software.',
-      'Build reusable UI components.',
-      'Adhered to an agile methodology for the software development process.',
-      'Integrated with various third-party services and APIs, including digital signature, document generation, and payment systems to add additional functionality to applications.',
-      'Maintained and updated documentation for the software development process.',
+      'Designed and developed scalable backend services using Kotlin (Spring).',
+      'Maintained legacy systems using PHP (Laravel) and Vue.',
+      'Developed a flexible loan automation system.',
+      'Built widely-used partner APIs.',
+      'Contributed to internal standards and design patterns.',
+      'Built partner dashboards.',
+      'Performed code reviews upholding best practices.',
+      'Implemented unit tests for all new features.',
+      'Resolved technical issues efficiently.',
+      'Delivered performant front-end UI.',
+      'Built reusable UI components.',
+      'Followed Agile development practices.',
+      'Integrated signature, document, and payment APIs.',
+      'Maintained technical documentation.',
     ],
   },
+
   {
     company: {
       name: 'Varnion',
@@ -188,13 +211,13 @@ export const EXPERIENCES: Experience[] = [];
       },
     ],
     accomplishments: [
-      'Refactored legacy code to adhere to modern design patterns, ensuring maintainability and longevity of software systems.',
-      'Optimized database structure to improve performance and scalability, reducing latency and downtime.',
-      'Integrated Elasticsearch for advanced network monitoring, resulting in improved load times and real-time data visualization.',
-      "Conceptualized and designed innovative features to enhance the company's products, providing a competitive advantage and improved user experience.",
-      'Mentored and provided guidance to junior developers on best practices, coding standards, and software development methodologies.',
-      'Stayed current with emerging technologies and industry trends to continuously improve software systems and capabilities.',
-      'Developed an internal data management application using PHP (Laravel) to effectively handle data-related tasks within the organization.',
+      'Refactored legacy code to modern standards.',
+      'Optimized database performance and scalability.',
+      'Integrated Elasticsearch for advanced monitoring.',
+      'Designed new product features.',
+      'Mentored junior developers.',
+      'Kept up with emerging technologies.',
+      'Developed internal data management tools.',
     ],
   },
 ];
