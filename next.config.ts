@@ -60,10 +60,16 @@ const millionConfig = {
   rsc: true,
 };
 
+// Only apply Sentry config if DSN is available
+const hasSentryDSN =
+  process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
+
 export default isDevelopment
   ? withContentCollections(MillionLint.next(millionConfig)(nextConfig))
-  : withContentCollections(
-      MillionLint.next(millionConfig)(
-        withSentryConfig(nextConfig, SentryWebpackPluginOptions),
-      ),
-    );
+  : hasSentryDSN
+    ? withContentCollections(
+        MillionLint.next(millionConfig)(
+          withSentryConfig(nextConfig, SentryWebpackPluginOptions),
+        ),
+      )
+    : withContentCollections(MillionLint.next(millionConfig)(nextConfig));
