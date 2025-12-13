@@ -15,10 +15,6 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   crossOrigin: 'anonymous',
   pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
-  env: {
-    SENTRY_SUPPRESS_INSTRUMENTATION_FILE_WARNING: '1',
-    SENTRY_SUPPRESS_GLOBAL_ERROR_HANDLER_FILE_WARNING: '1',
-  },
   images: {
     remotePatterns: [
       // google avatar
