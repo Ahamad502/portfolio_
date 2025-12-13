@@ -9,13 +9,6 @@ const CertificatesList = () => {
     .filter((cert) => cert.published)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-  console.log('Total certificates:', allCertificates.length);
-  console.log('Published certificates:', certificates.length);
-  console.log(
-    'Certificate titles:',
-    certificates.map((c) => c.title),
-  );
-
   if (certificates.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-12">

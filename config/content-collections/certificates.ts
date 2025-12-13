@@ -15,7 +15,7 @@ const certificates = defineCollection({
     issuer: z.string(),
     date: z.string().date(),
     image: z.string(),
-    certificateUrl: z.string().url().optional(),
+    certificateUrl: z.string().optional(),
     skills: z.array(z.string()).default([]),
     published: z.boolean().default(true),
   }),
