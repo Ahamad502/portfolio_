@@ -8,3 +8,6 @@ Sentry.init({
   // Disable Sentry during development
   enabled: process.env.NODE_ENV === 'production',
 });
+
+// Export router transition hook for navigation instrumentation
+export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;

@@ -25,3 +25,6 @@ export async function register() {
     });
   }
 }
+
+// Export request error hook for error instrumentation
+export const onRequestError = Sentry.captureRequestError;
