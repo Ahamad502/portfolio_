@@ -2,7 +2,7 @@
 
 A modern, feature-rich portfolio website showcasing my projects, certificates, and professional journey. Built with cutting-edge technologies and real-time integrations.
 
-🌐 **Live Site:** [portfolio-cyan-beta-djxl1kbl71.vercel.app](https://portfolio-cyan-beta-djxl1kbl71.vercel.app)
+🌐 **Live Site:** [ahamad-portfolio.vercel.app](https://ahamad-portfolio.vercel.app)
 
 ![Next.js](https://img.shields.io/badge/Next.js-15.5.9-black?style=flat-square&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue?style=flat-square&logo=typescript)
@@ -163,7 +163,7 @@ Feel free to fork this repository and customize it for your own portfolio. If yo
 
 ## 📞 Contact
 
-- **Website:** [portfolio-cyan-beta-djxl1kbl71.vercel.app](https://portfolio-cyan-beta-djxl1kbl71.vercel.app)
+- **Website:** [ahamad-portfolio.vercel.app](https://ahamad-portfolio.vercel.app)
 - **Email:** Contact me through the portfolio website
 - **GitHub:** [@Ahamad502](https://github.com/Ahamad502)
 
