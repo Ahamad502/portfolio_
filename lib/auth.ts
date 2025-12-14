@@ -25,7 +25,11 @@ export const authOptions: NextAuthOptions = {
           GoogleProvider({
             clientId: env.GOOGLE_ID,
             clientSecret: env.GOOGLE_SECRET,
-            checks: 'none',
+            authorization: {
+              params: {
+                scope: 'openid email profile',
+              },
+            },
           }),
         ]
       : []),
