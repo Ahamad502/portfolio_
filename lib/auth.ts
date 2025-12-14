@@ -16,7 +16,6 @@ export const authOptions: NextAuthOptions = {
           GitHubProvider({
             clientId: env.GITHUB_ID,
             clientSecret: env.GITHUB_SECRET,
-            checks: 'none',
           }),
         ]
       : []),
@@ -25,22 +24,32 @@ export const authOptions: NextAuthOptions = {
           GoogleProvider({
             clientId: env.GOOGLE_ID,
             clientSecret: env.GOOGLE_SECRET,
-            authorization: {
-              params: {
-                scope: 'openid email profile',
-              },
-            },
           }),
         ]
       : []),
   ],
   pages: {
     signIn: '/auth',
+    error: '/auth/error',
   },
   callbacks: {
-    session: async ({ session, user }) => {
-      session.id = user.id;
-      return Promise.resolve(session);
+    async signIn({ account }) {
+      if (account?.provider === 'google' || account?.provider === 'github') {
+        return true;
+      }
+      return true;
+    },
+    async session({ session, user }) {
+      if (user) {
+        session.id = user.id;
+      }
+      return session;
+    },
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
     },
   },
 };
