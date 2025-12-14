@@ -11,8 +11,8 @@ const SpotifyPlaylist = () => {
   // 1. Go to open.spotify.com and find your playlist
   // 2. Click Share → Embed playlist
   // 3. Copy the playlist ID (the part after /playlist/)
-  // Example: https://open.spotify.com/playlist/37i9dQZF1DX0XUsuxWHRQd
-  const playlistId = '37i9dQZF1DX0XUsuxWHRQd'; // Default: Chill Coding playlist
+  // Example: https://open.spotify.com/playlist/37i9dQZF1DX4H5837Y8I1n
+  const playlistId = '37i9dQZF1DX4H5837Y8I1n'; // Your custom playlist
 
   useEffect(() => {
     // Smooth entrance animation

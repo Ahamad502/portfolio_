@@ -17,14 +17,14 @@ const ConnectAndMusic = () => {
   // 1. Go to open.spotify.com and find your playlist
   // 2. Click Share → Embed playlist
   // 3. Copy the playlist ID (the part after /playlist/)
-  const playlistId = '37i9dQZF1DX0XUsuxWHRQd'; // Default: Chill Coding playlist
+  const playlistId = '37i9dQZF1DX4H5837Y8I1n'; // Your custom playlist
 
   // 📧 FORMSPREE CONFIGURATION
   // Replace with your Formspree endpoint URL:
   // 1. Sign up at formspree.io
   // 2. Create a new form
   // 3. Copy your form endpoint URL
-  const formspreeEndpoint = 'https://formspree.io/f/YOUR_FORM_ID'; // Replace with your Formspree URL
+  const formspreeEndpoint = 'https://formspree.io/f/xwpgzqyb'; // Your Formspree URL
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
