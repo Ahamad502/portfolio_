@@ -33,8 +33,44 @@ export const authOptions: NextAuthOptions = {
     error: '/auth/error',
   },
   callbacks: {
-    async signIn({ account }) {
+    async signIn({ account, profile, user: _user }) {
+      // Handle OAuth account linking
       if (account?.provider === 'google' || account?.provider === 'github') {
+        if (profile?.email) {
+          try {
+            // Check if user with this email already exists
+            const existingUser = await prisma.user.findUnique({
+              where: { email: profile.email },
+              include: { accounts: true },
+            });
+
+            // If user exists but doesn't have this provider linked, link it
+            if (
+              existingUser &&
+              !existingUser.accounts.some(
+                (acc) => acc.provider === account.provider,
+              )
+            ) {
+              await prisma.account.create({
+                data: {
+                  userId: existingUser.id,
+                  type: account.type,
+                  provider: account.provider,
+                  providerAccountId: account.providerAccountId,
+                  refresh_token: account.refresh_token,
+                  access_token: account.access_token,
+                  expires_at: account.expires_at,
+                  token_type: account.token_type,
+                  scope: account.scope,
+                  id_token: account.id_token,
+                  session_state: account.session_state,
+                },
+              });
+            }
+          } catch (error) {
+            console.error('Error linking account:', error);
+          }
+        }
         return true;
       }
       return true;

@@ -27,7 +27,7 @@ export default function AuthError() {
       case 'Callback':
         return 'There was an error in the OAuth callback handler route.';
       case 'OAuthAccountNotLinked':
-        return 'OAuth account is not linked to any existing account.';
+        return 'This email is already registered with a different sign-in method. Try signing in with the other provider (Google or GitHub) that you used before.';
       case 'EmailSignin':
         return 'There was an error sending the email.';
       case 'CredentialsSignin':
